@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const User = new Schema({
+const UserSchema = new Schema({
     username: String,
     email: String,
     first_name: String,
@@ -10,13 +10,13 @@ const User = new Schema({
     stores: [Store]
 })
 
-const Store = new Schema({
+const StoreSchema = new Schema({
     name: String,
     address: String,
     gifts: [Gift]
 })
 
-const Gift = new Schema({
+const GiftSchema = new Schema({
     name: String,
     description: String,
     price: Number,
@@ -24,7 +24,7 @@ const Gift = new Schema({
 })
 
 module.exports = {
-    User,
-    Store,
-    Gift
+    UserSchema,
+    StoreSchema,
+    GiftSchema
 }
