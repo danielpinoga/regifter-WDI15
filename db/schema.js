@@ -22,3 +22,9 @@ const Gift = new Schema({
     price: Number,
     gift_giver: String
 })
+
+module.exports = {
+    User,
+    Store,
+    Gift
+}
