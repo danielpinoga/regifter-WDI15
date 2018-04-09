@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
+app.set('view engine', 'hbs');
+
 app.listen(3000, () => {
     console.log("Listening on port 3000")
 })
@@ -14,5 +16,5 @@ app.get("/", (req, res) => {
 })
 
 app.get("/users", (req, res) => {
-    res.send("Users Page")
+    res.render("users/index", {})
 })
