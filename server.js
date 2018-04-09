@@ -15,6 +15,13 @@ app.get("/", (req, res) => {
     res.redirect("/users")
 })
 
+const User = require("./models/User")
 app.get("/users", (req, res) => {
-    res.render("users/index", {})
+    User.find({})
+        .then((users) => {
+            console.log("USERS", users)
+            res.render("users/index", {
+                users
+            })
+        })
 })

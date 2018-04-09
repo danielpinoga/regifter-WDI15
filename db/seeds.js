@@ -19,7 +19,7 @@ mongoose.connection.on('error', (error) => {
 })
 
 // Delete all users, then add some fake ones
-User.remove({}, () => {})
+User.remove({})
     .then(() => {
         const bobLoblaw = new User({
             username: 'bob_loblaw',
