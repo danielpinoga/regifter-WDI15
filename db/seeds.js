@@ -1,11 +1,10 @@
-require('dotenv').config()
 const User = require('../models/User')
 const Store = require('../models/Store')
 const Gift = require('../models/Gift')
 const mongoose = require('mongoose')
 
 // connect to database
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb://localhost/regifter")
 
 mongoose.connection.once('open', () => {
     console.log(`Mongoose has connected to MongoDB`)
@@ -39,7 +38,7 @@ User.remove({}).then(() => {
         price: 25.41,
         cameFrom: 'Lucille'
     })
-    target.giftsToReturn.push(toaster)
+    target.gifts.push(toaster)
 
     const sharperImage = new Store({
         name: 'Sharper Image',
@@ -51,7 +50,7 @@ User.remove({}).then(() => {
         price: 1521.67,
         cameFrom: 'Oscar'
     })
-    sharperImage.giftsToReturn.push(massageChair)
+    sharperImage.gifts.push(massageChair)
 
     bobLoblaw.stores.push(target, sharperImage)
 
