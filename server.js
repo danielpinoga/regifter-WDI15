@@ -12,7 +12,6 @@ app.listen(3000, () => {
     console.log("Listening on port 3000")
 })
 
-
 mongoose.connect("mongodb://localhost/regifter")
 
 mongoose.connection.once('open', () => {
