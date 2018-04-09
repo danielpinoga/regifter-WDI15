@@ -12,11 +12,13 @@ app.listen(3000, () => {
 })
 
 app.get("/", (req, res) => {
+    console.log("Hitting Index Route")
     res.redirect("/users")
 })
 
 const User = require("./models/User")
 app.get("/users", (req, res) => {
+    console.log("Hitting Users Route")
     User.find({})
         .then((users) => {
             console.log("USERS", users)
